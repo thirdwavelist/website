@@ -90,8 +90,8 @@ export type CafeListQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type CafeListQuery = (
   { __typename?: 'Query' }
-& { cafes: Array<(
-    { __typename?: 'Cafe' }
+  & { cafes: Array<(
+    { __typename: 'Cafe' }
     & Pick<Cafe, 'id' | 'name' | 'address' | 'thumbnailUrl'>
   )> }
 );
@@ -104,6 +104,7 @@ export const CafeListDocument = gql`
     name
     address
     thumbnailUrl
+    __typename
   }
 }
     `;
@@ -132,3 +133,46 @@ export function useCafeListLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<C
 export type CafeListQueryHookResult = ReturnType<typeof useCafeListQuery>;
 export type CafeListLazyQueryHookResult = ReturnType<typeof useCafeListLazyQuery>;
 export type CafeListQueryResult = Apollo.QueryResult<CafeListQuery, CafeListQueryVariables>;
+
+export const aCafe = (overrides?: Partial<Cafe>): Cafe => {
+    return {
+        id: overrides && overrides.hasOwnProperty('id') ? overrides.id! : 'saepe',
+        name: overrides && overrides.hasOwnProperty('name') ? overrides.name! : 'quia',
+        address: overrides && overrides.hasOwnProperty('address') ? overrides.address! : 'qui',
+        thumbnailUrl: overrides && overrides.hasOwnProperty('thumbnailUrl') ? overrides.thumbnailUrl! : 'velit',
+        facebookUrl: overrides && overrides.hasOwnProperty('facebookUrl') ? overrides.facebookUrl! : 'qui',
+        instagramUrl: overrides && overrides.hasOwnProperty('instagramUrl') ? overrides.instagramUrl! : 'et',
+        homepageUrl: overrides && overrides.hasOwnProperty('homepageUrl') ? overrides.homepageUrl! : 'aspernatur',
+        hasEspresso: overrides && overrides.hasOwnProperty('hasEspresso') ? overrides.hasEspresso! : true,
+        hasAeropress: overrides && overrides.hasOwnProperty('hasAeropress') ? overrides.hasAeropress! : false,
+        hasPourover: overrides && overrides.hasOwnProperty('hasPourover') ? overrides.hasPourover! : true,
+        hasColdbrew: overrides && overrides.hasOwnProperty('hasColdbrew') ? overrides.hasColdbrew! : true,
+        hasFullImmersion: overrides && overrides.hasOwnProperty('hasFullImmersion') ? overrides.hasFullImmersion! : false,
+        espressoMachine: overrides && overrides.hasOwnProperty('espressoMachine') ? overrides.espressoMachine! : 'at',
+        grinder: overrides && overrides.hasOwnProperty('grinder') ? overrides.grinder! : 'et',
+        immersiveGear: overrides && overrides.hasOwnProperty('immersiveGear') ? overrides.immersiveGear! : 'et',
+        pouroverGear: overrides && overrides.hasOwnProperty('pouroverGear') ? overrides.pouroverGear! : 'quis',
+        roasters: overrides && overrides.hasOwnProperty('roasters') ? overrides.roasters! : 'iste',
+        hasLightRoast: overrides && overrides.hasOwnProperty('hasLightRoast') ? overrides.hasLightRoast! : false,
+        hasMediumRoast: overrides && overrides.hasOwnProperty('hasMediumRoast') ? overrides.hasMediumRoast! : true,
+        hasDarkRoast: overrides && overrides.hasOwnProperty('hasDarkRoast') ? overrides.hasDarkRoast! : false,
+        hasSingleOrigin: overrides && overrides.hasOwnProperty('hasSingleOrigin') ? overrides.hasSingleOrigin! : false,
+        hasBlend: overrides && overrides.hasOwnProperty('hasBlend') ? overrides.hasBlend! : true,
+        googlePlaceId: overrides && overrides.hasOwnProperty('googlePlaceId') ? overrides.googlePlaceId! : 'laborum',
+        instagramPlaceId: overrides && overrides.hasOwnProperty('instagramPlaceId') ? overrides.instagramPlaceId! : 'optio',
+        lat: overrides && overrides.hasOwnProperty('lat') ? overrides.lat! : 'ut',
+        lng: overrides && overrides.hasOwnProperty('lng') ? overrides.lng! : 'totam',
+        created: overrides && overrides.hasOwnProperty('created') ? overrides.created! : 'reiciendis',
+        lastUpdated: overrides && overrides.hasOwnProperty('lastUpdated') ? overrides.lastUpdated! : 'doloremque',
+    };
+};
+
+export const aRoaster = (overrides?: Partial<Roaster>): Roaster => {
+    return {
+        id: overrides && overrides.hasOwnProperty('id') ? overrides.id! : 'sunt',
+        name: overrides && overrides.hasOwnProperty('name') ? overrides.name! : 'corrupti',
+        address: overrides && overrides.hasOwnProperty('address') ? overrides.address! : 'placeat',
+        instagramId: overrides && overrides.hasOwnProperty('instagramId') ? overrides.instagramId! : 'laborum',
+        googlePlaceId: overrides && overrides.hasOwnProperty('googlePlaceId') ? overrides.googlePlaceId! : 'eum',
+    };
+};

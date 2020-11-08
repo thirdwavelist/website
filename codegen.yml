@@ -1,12 +1,12 @@
 overwrite: true
 schema: "http://localhost:5000/coficiando/us-central1/graphql"
 documents: "./src/components/**/*.{ts,tsx}"
-introspection: true
 generates:
   src/generated/graphql.tsx:
     plugins:
       - "typescript"
       - "typescript-operations"
       - "typescript-react-apollo"
+      - "typescript-mock-data"
     config:
       withHooks: true
