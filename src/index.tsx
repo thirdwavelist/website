@@ -7,7 +7,7 @@ import reportWebVitals from './reportWebVitals';
 
 const client = new ApolloClient({
   link: createHttpLink({
-    uri: 'https://barista.thirdwavelist.com/api/graphql',
+    uri: process.env.REACT_APP_GRAPHQL_ENDPOINT,
   }),
   cache: new InMemoryCache(),
 });
