@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Spinner } from 'react-bootstrap';
 import { useCafeListQuery } from '../../generated/graphql';
 import CafeList, { OwnProps } from './CafeList';
 
@@ -6,7 +7,9 @@ const CafeListContainer = (props: OwnProps) => {
   const { data, error, loading } = useCafeListQuery();
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <Spinner animation="border" role="status">
+      <span className="sr-only">Loading...</span>
+    </Spinner>;
   }
 
   if (error || !data) {
