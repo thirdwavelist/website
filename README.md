@@ -2,6 +2,13 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Setup
+
+Before running any of the available scripts locally, please ensure to have the following set up:
+
+1. An instance of [thirdwavelist/backend](https://github.com/thirdwavelist/backend) running locally
+2. The url of the above mentioned service saved into the empty `.env` file like: `REACT_APP_GRAPHQL_ENDPOINT = http://localhost:5000`
+
 ## Available Scripts
 
 In the project directory, you can run:
