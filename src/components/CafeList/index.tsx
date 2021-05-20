@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Spinner } from 'react-bootstrap';
 import { useCafeListQuery } from '../../generated/graphql';
 import CafeList, { OwnProps } from './CafeList';

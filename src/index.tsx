@@ -1,4 +1,3 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
 import { createHttpLink, ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import './index.css';
